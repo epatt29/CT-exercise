@@ -30,8 +30,6 @@ jobs:
   #      with:
   #        subscriptionId: ${{ env.AZURE_SUBSCRIPTION_ID }}
   #        resourceGroupName: ${{ env.AZURE_RESOURCE_GROUP }}
-  #        template: $GITHUB_WORKSPACE/IaC/Templates/azuredeploy.json  # Set this to the location of your template file
-  #        parameters: $GITHUB_WORKSPACE/IaC/azuredeploy.parameters.json # Set this to the location of your parameters file
-        run: 
-          pwd;
-          ls IaC;
+  #        template: IaC/Templates/azuredeploy.json  # Set this to the location of your template file
+  #        parameters: IaC/azuredeploy.parameters.json # Set this to the location of your parameters file
+        run: cat IaC/azuredeploy.parameters.json
