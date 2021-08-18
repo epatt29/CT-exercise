@@ -28,6 +28,16 @@ jobs:
           enable-AzPSSession: true
       
       - name: Deploy virtual machine in Azure
-          
-        run: >
-          powershell -command "& '${{ env.GITHUB_WORKSPACE }}\IaC\Scripts\New-Deployment.ps1'"
+        uses: azure/powershell@v1
+        with:
+          azPSVersion: '3.1.0'
+          inlineScript: |
+            $templateFile = "Templates\azuredeploy.json"
+            $parameterFile = "azuredeploy.parameters.json"
+            $today=Get-Date -Format "MM-dd-yyyy"
+            $deploymentName="VMDeployment-"+"$today"
+            New-AzResourceGroupDeployment `
+              -ResourceGroupName "VMs_RSG"
+              -Name $deploymentName `
+              -TemplateFile $templateFile `
+              -TemplateParameterFile $parameterFile
