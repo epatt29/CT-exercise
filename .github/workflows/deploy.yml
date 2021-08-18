@@ -5,15 +5,17 @@ name: Deployment and Configuration of Azure VM
 # Workflow Triggers: On push to main branch or manual execution via the Actions tab.
 on:
   workflow_dispatch:
-
+env:
+  AZURE_RESOURCE_GROUP: 'VMs_RSG'   # set this to your Azure Resource group's name  
+  AZURE_SUBSCRIPTION_ID: cd5897a5-2d9d-49b0-a844-5b47fc89f8ce   # set this to your Azure Subscription Id
+  
 jobs:
 
 # Deploy VM in Azure
   deployVM:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     
     steps:
-      # Checkout Code
       - name: Checkout exercise repo
         uses: actions/checkout@v2
                
@@ -24,6 +26,9 @@ jobs:
           enable-AzPSSession: true
           
       - name: Deploy virtual machine in Azure
-        uses: Azure/powershell@v1
-        with: 
-          IaC\Scripts\New-Deployment.ps1
+        uses: azure/arm-deploy@v1
+        with:
+          subscriptionId: ${{ env.AZURE_SUBSCRIPTION_ID }}
+          resourceGroupName: ${{ env.AZURE_RESOURCE_GROUP }}
+          template: $GITHUB_WORKSPACE/IaC/Templates/azuredeploy.json  # Set this to the location of your template file
+          parameters: $GITHUB_WORKSPACE/IaC/azuredeploy.parameters.json # Set this to the location of your parameters file
