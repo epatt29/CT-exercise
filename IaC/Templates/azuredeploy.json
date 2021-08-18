@@ -4,6 +4,7 @@
     "parameters": {
       "storage": {
         "type": "string",
+        "defaultValue": "[concat('stor', uniqueString(resourceGroup().id))]",
         "metadata": {
           "description": "Name prefix of the Storage Account"
         }
