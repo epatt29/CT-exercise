@@ -18,10 +18,10 @@ jobs:
     
     steps:
       # Checkout Code
-      - name: checkout exercise repo
+      - name: Checkout exercise repo
         uses: actions/checkout@v2
         
-      - name: set build script path
+      - name: Set build script path
         run: |
 
           ls '${{ env.GITHUB_WORKSPACE }}\IaC\Scripts'
@@ -31,8 +31,7 @@ jobs:
           creds: '${{ secrets.AZURE_CREDENTIALS }}'
           enable-AzPSSession: true
       
-      - name: deploy virtual machine in Azure
-        uses: Azure/powershell@v1
+      - name: Deploy virtual machine in Azure
           
         run: >
           powershell -command "& '${{ env.ScriptsPath }}\New-Deployment.ps1'"
