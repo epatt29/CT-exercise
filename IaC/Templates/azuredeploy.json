@@ -137,7 +137,7 @@
                 "direction": "Inbound",
                 "destinationPortRange": "22",
                 "protocol": "Tcp",
-                "sourceAddressPrefix": "*",
+                "sourceAddressPrefix": "98.192.204.170",
                 "sourcePortRange": "*",
                 "destinationAddressPrefix": "*"
               }
@@ -150,7 +150,7 @@
                 "direction": "Inbound",
                 "destinationPortRange": "80",
                 "protocol": "Tcp",
-                "sourceAddressPrefix": "*",
+                "sourceAddressPrefix": "98.192.204.170",
                 "sourcePortRange": "*",
                 "destinationAddressPrefix": "*"
               }
