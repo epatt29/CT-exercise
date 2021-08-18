@@ -32,4 +32,6 @@ jobs:
   #        resourceGroupName: ${{ env.AZURE_RESOURCE_GROUP }}
   #        template: $GITHUB_WORKSPACE/IaC/Templates/azuredeploy.json  # Set this to the location of your template file
   #        parameters: $GITHUB_WORKSPACE/IaC/azuredeploy.parameters.json # Set this to the location of your parameters file
-        run: ls
+        run: 
+          pwd;
+          ls IaC;
