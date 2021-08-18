@@ -13,7 +13,6 @@ Pretty much 95% of the stuff in this exercise is not original content coming fro
 
 # Assumptions:
 * Cloud service provider - Microsoft Azure
-* Underlying infrastructure has already been provisioned - "Networking_RSG" resource group, "VNET01" virtual network, "VMs" subnet, "VNET01-VMs_NSG" network security group, "VMs_RSG" resource group
 * Operating System - Ubuntu
 * Only file requiring edits between deployments - IaC\azuredeploy.parameters.json
 
