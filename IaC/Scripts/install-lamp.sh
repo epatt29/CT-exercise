@@ -13,7 +13,7 @@ apt-get -y install apache2 mysql-server php7.3 libapache2-mod-php7.3 php7.3-mysq
 
 # Write PHP info 
 echo \<center\>\<h1\>Hello World!\</h1\>\<br/\>\</center\> > /var/www/html/helloworld.php
-echo \<\?php phpinfo\(\)\; \?\> >> /var/www/html/phpinfo.php
+echo \<\?php phpinfo\(\)\; \?\> > /var/www/html/phpinfo.php
 
 # Restart web server
 apachectl restart
