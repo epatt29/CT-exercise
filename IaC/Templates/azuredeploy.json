@@ -4,14 +4,12 @@
     "parameters": {
       "storageName": {
         "type": "string",
-        "maxLength": 11,
         "metadata": {
           "description": "Name prefix of the Storage Account"
         }
       },
       "vmName": {
           "type": "string",
-          "maxLength": 10,
           "metadata": {
               "description": "Virtual Machine name"
           }
