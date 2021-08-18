@@ -12,12 +12,15 @@ Pretty much 95% of the stuff in this exercise is not original content coming fro
 
 # Assumptions:
 * Cloud service provider - Microsoft Azure
-* Underlying infrastructure - "Networking_RSG" resource group, "VNET01" virtual network, "VMs" subnet, "VNET01-VMs_NSG" network security group, "VMs_RSG" resource group
+* Underlying infrastructure has already been provisioned - "Networking_RSG" resource group, "VNET01" virtual network, "VMs" subnet, "VNET01-VMs_NSG" network security group, "VMs_RSG" resource group
 * Operating System - Ubuntu
 * Only file requiring edits between deployments - IaC\azuredeploy.parameters.json
 
 # High-level process executed by GitHub Action:
-* List scripts
-* Connect to Azure subscription
+* Checkout exercise repo
+* Authenticate to Azure
 * Provision associated resources
 * Invoke custom script extension to complete a silent install of Apache, MySQL, and PHP, then create basic PHP page.
+
+# Goals to improve automation
+* Push updates to VMs based on a successful GitHub pull
