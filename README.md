@@ -16,7 +16,8 @@ Pretty much 95% of the stuff in this exercise is not original content coming fro
 * Operating System - Ubuntu
 * Only file requiring edits between deployments - IaC\azuredeploy.parameters.json
 
-# High-level process:
+# High-level process executed by GitHub Action:
+* List scripts
 * Connect to Azure subscription
 * Provision associated resources
 * Start VM (if needed)
