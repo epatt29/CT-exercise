@@ -24,7 +24,7 @@ jobs:
           enable-AzPSSession: true
           
       - name: Test working directory
-        run: ls
+        run: ls IaC
           
 #      - name: Deploy virtual machine in Azure
 #        run: \IaC\Scripts\New-Deployment.ps1
