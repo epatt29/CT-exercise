@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "storageName": {
+        "value": "[uniqueString(subscription().subscriptionId)]"
+      },
+      "vmName": {
+        "value": "[concat('VM-', uniqueString(resourceGroup().id)]"
+      }, 
+      "adminUsername": {
+        "value": "[concat('U-', uniqueString(resourceGroup().id)]"
+      },
+      "dnsLabelPrefix": {
+        "value": "[toLower(format(concat(parameters('vmName'), uniqueString(resourceGroup().id))))]"
+      },
+      "mySqlPassword": {
+        "value": "[concat('P', uniqueString(resourceGroup().id, 'x', '!')]"
+      },
+      "adminPasswordOrKey": {
+        "value": "Update me before deployment!"
+      },
+      "vmSize": {
+          "value": "Standard_A2v2"
+      }
+    }
+  }
