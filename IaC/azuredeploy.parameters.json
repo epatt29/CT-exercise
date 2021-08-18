@@ -5,17 +5,8 @@
       "vmName": {
         "value": "VM01"
       }, 
-      "adminUsername": {
-        "value": "[concat('U-', uniqueString(resourceGroup().id)]"
-      },
-      "dnsLabelPrefix": {
-        "value": "[toLower(format(concat(parameters('vmName'), uniqueString(resourceGroup().id))))]"
-      },
-      "mySqlPassword": {
-        "value": "[concat('P', uniqueString(resourceGroup().id, 'x', '!')]"
-      },
       "adminPasswordOrKey": {
-        "value": "Update me before deployment!"
+        "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBQpv2pQHgamW+tS4aG9WfhmKkiuShE5LlISfcfnh/km5QCZzirtutwWmky0YfFahlqW1Y/1CmeK7UoDf1bnkQZ85Wty00gfrWzgxGdA3JosufNlwz9fPqT0UwS0i/yRk6oab7LjExviiRNSOAPUvdgy6ilhWqwsmOJ/wPmwa30yHkq6KQDVH+0hVtDiix0Chw9F7iGA7y4Hjghygj2ZbnwfJM75AWlOCzehDFM1IiYp6qn/tCq6hENUjUk9yMYluXwyIfGtAduWu8kyzax94TQ0D5EDza0SxzaeQvWHnteJL3kEK+1T4VfijJZR3xLRRYOCbAWp27FWmtg8VpkNTj liz@Lilith"
       },
       "vmSize": {
           "value": "Standard_A2v2"

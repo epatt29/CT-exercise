@@ -17,18 +17,21 @@
       },
       "adminUsername": {
         "type": "string",
+        "defaultValue": "[concat('U-', uniqueString(resourceGroup().id)]",
         "metadata": {
           "description": "User name for the Virtual Machine."
         }
       },
       "mySqlPassword": {
         "type": "securestring",
+        "defaultValue": "[concat('P', uniqueString(resourceGroup().id, 'x', '!')]",
         "metadata": {
           "description": "Password for the MySQL admin user."
         }
       },
       "dnsLabelPrefix": {
         "type": "string",
+        "defaultValue": "[toLower(format(concat(parameters('vmName'), uniqueString(resourceGroup().id),'publicdns')))]",
         "metadata": {
           "description": "DNS Label for the Public IP. Must be lowercase. It should match with the following regular expression: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$ or it will raise an error."
         }
