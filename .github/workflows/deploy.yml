@@ -25,6 +25,4 @@ jobs:
           
       - name: Deploy virtual machine in Azure
         uses: Azure/powershell@v1
-              with:
-              azPSVersion: 3.1.0
         run: IaC\Scripts\New-Deployment.ps1
