@@ -21,10 +21,6 @@ jobs:
       - name: Checkout exercise repo
         uses: actions/checkout@v2
         
-      - name: Set build script path
-        run: |
-
-          ls '${{ env.GITHUB_WORKSPACE }}\IaC\Scripts'
       - name: Authenticate to Azure
         uses: azure/login@v1
         with:
@@ -34,4 +30,4 @@ jobs:
       - name: Deploy virtual machine in Azure
           
         run: >
-          powershell -command "& '${{ env.ScriptsPath }}\New-Deployment.ps1'"
+          powershell -command "& '${{ env.GITHUB_WORKSPACE }}\IaC\Scripts\New-Deployment.ps1'"
