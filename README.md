@@ -9,6 +9,7 @@ Pretty much 95% of the stuff in this exercise is not original content coming fro
 * "How to use GitHub Actions to deploy an Azure Virtual Machine" by Sarah Lean - https://techcommunity.microsoft.com/t5/itops-talk-blog/how-to-use-github-actions-to-deploy-an-azure-virtual-machine/ba-p/1092015
 * "Azure Quickstart Template - Very simple deployment of a Linux Ubuntu VM" - https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.compute/vm-simple-linux
 * "Azure Quickstart Template - Deploy a LAMP app on Ubuntu" - https://github.com/Azure/azure-quickstart-templates/tree/master/demos/lamp-app
+* "Actions - GitHub Actions for Azure" - https://github.com/Azure/actions
 
 # Assumptions:
 * Cloud service provider - Microsoft Azure
@@ -19,8 +20,8 @@ Pretty much 95% of the stuff in this exercise is not original content coming fro
 # High-level process executed by GitHub Action:
 * Checkout exercise repo
 * Authenticate to Azure
-* Provision associated resources
-* Invoke custom script extension to complete a silent install of Apache, MySQL, and PHP, then create basic PHP page.
+* Provision associated resources and invoke custom script extension to complete a silent install of Apache, MySQL, and PHP, then create basic PHP page.
 
 # Goals to improve automation
 * Push updates to VMs based on a successful GitHub pull
+* Pull script URI instead of manually including in ARM template
