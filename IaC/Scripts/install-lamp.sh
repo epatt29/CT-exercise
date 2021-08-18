@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Add PHP repo
+apt install software-properties-common
+add-apt-repository ppa:ondrej/php
 apt-get -y update
 
 # Silent MySQL install
