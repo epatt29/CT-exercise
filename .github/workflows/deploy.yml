@@ -23,8 +23,5 @@ jobs:
           creds: '${{ secrets.AZURE_CREDENTIALS }}'
           enable-AzPSSession: true
           
-      - name: Test working directory
-        run: ls IaC\Scripts
-          
-#      - name: Deploy virtual machine in Azure
-#        run: \IaC\Scripts\New-Deployment.ps1
+      - name: Deploy virtual machine in Azure
+        run: IaC\Scripts\New-Deployment.ps1
