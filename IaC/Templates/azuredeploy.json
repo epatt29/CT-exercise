@@ -17,7 +17,7 @@
       },
       "adminUsername": {
         "type": "string",
-        "defaultValue": "[concat('U-', uniqueString(resourceGroup().id)]",
+        "defaultValue": "[concat(parameters('vmName'),'-adm')]",
         "metadata": {
           "description": "User name for the Virtual Machine."
         }
