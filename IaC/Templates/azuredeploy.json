@@ -101,7 +101,7 @@
       "subnetName": "VMs",
       "subnetPrefix": "10.0.0.0/24",
       "storageAccountType": "Standard_LRS",
-      "publicIPAddressName": "[concat(variables('nicName'), '--pip') ]",
+      "publicIPAddressName": "[concat(variables('nicName'), '-pip') ]",
       "publicIPAddressType": "Dynamic",
       "virtualNetworkName": "VNET01",
       "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
