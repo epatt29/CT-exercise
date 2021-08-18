@@ -24,7 +24,7 @@
       },
       "mySqlPassword": {
         "type": "securestring",
-        "defaultValue": "[concat('P', uniqueString(resourceGroup().id, 'x', '!')]",
+        "defaultValue": "[concat('P', uniqueString(resourceGroup().id, 'x', '!'))]",
         "metadata": {
           "description": "Password for the MySQL admin user."
         }
