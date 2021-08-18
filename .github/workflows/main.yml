@@ -2,21 +2,13 @@
 
 name: Deployment and Configuration of Azure VM
 
-Env:
-
-  OUTPUT_PATH: ${{ github.workspace }}
-
 # Workflow Triggers: On push to main branch or manual execution via the Actions tab.
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-#  push:
-#    branches: [ main ]
-
   workflow_dispatch:
 
 jobs:
 
-  # Deploy VM in Azure
+# Deploy VM in Azure
   deployVM:
     runs-on: windows-latest
     
@@ -24,20 +16,12 @@ jobs:
       # Checkout Code
       - name: Checkout exercise repo
         uses: actions/checkout@v2
-        
-      - name: look for ps1 file
-
-        run: |
-
-          ls '${{ env.OUTPUT_PATH }}\IaC\Scripts'
-        
+               
       - name: Authenticate to Azure
         uses: azure/login@v1
         with:
           creds: '${{ secrets.AZURE_CREDENTIALS }}'
           enable-AzPSSession: true
-      
+          
       - name: Deploy virtual machine in Azure
-        run: >
-
-          powershell -command "& '${{ env.OUTPUT_PATH }}\IaC\AzCLI\vmcreation.ps1'"
+        run: .\IaC\Scripts\New-Deployment.ps1
