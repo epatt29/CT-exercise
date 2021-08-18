@@ -212,7 +212,7 @@
         }
       },
       {
-        "apiVersion": "2021-01-01",
+        "apiVersion": "2021-03-01",
         "type": "Microsoft.Compute/virtualMachines",
         "name": "[parameters('vmName')]",
         "location": "[parameters('location')]",
@@ -255,7 +255,7 @@
       {
         "type": "Microsoft.Compute/virtualMachines/extensions",
         "name": "[concat(parameters('vmName'),'/newuserscript')]",
-        "apiVersion": "2021-01-01",
+        "apiVersion": "2021-03-01",
         "location": "[parameters('location')]",
         "dependsOn": [
           "[resourceId('Microsoft.Compute/virtualMachines/', parameters('vmName'))]"
