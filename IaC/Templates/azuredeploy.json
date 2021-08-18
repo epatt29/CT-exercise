@@ -254,7 +254,7 @@
       },
       {
         "type": "Microsoft.Compute/virtualMachines/extensions",
-        "name": "[concat(parameters('vmName'),'/newuserscript')]",
+        "name": "[concat(parameters('vmName'),'/configscript')]",
         "apiVersion": "2021-03-01",
         "location": "[parameters('location')]",
         "dependsOn": [
@@ -263,13 +263,13 @@
         "properties": {
           "publisher": "Microsoft.Azure.Extensions",
           "type": "CustomScript",
-          "typeHandlerVersion": "2.0",
+          "typeHandlerVersion": "2.1",
           "autoUpgradeMinorVersion": true,
           "settings": {
-            "fileUris": ["https://github.com/epatt29/CT-exercise/blob/main/IaC/Scripts/install-lamp.sh"]
-          },
+            },
           "protectedSettings": {
-            "commandToExecute": "[concat('sh install_lamp.sh ', variables('mySqlPassword'))]"
+            "commandToExecute": "[concat('sh install_lamp.sh ', variables('mySqlPassword'))]",
+            "fileUris": ["https://github.com/epatt29/CT-exercise/blob/main/IaC/Scripts/install-lamp.sh"]
           }
         }
       }
