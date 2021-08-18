@@ -268,7 +268,7 @@
           "settings": {
             },
           "protectedSettings": {
-            "commandToExecute": "[concat('sh install_lamp.sh ', variables('mySqlPassword'))]",
+            "commandToExecute": "[concat('sh ./install_lamp.sh ', variables('mySqlPassword'))]",
             "fileUris": ["https://github.com/epatt29/CT-exercise/blob/2aec2c79dbd9198b35ca01b7e7992c801ab2b350/IaC/Scripts/install-lamp.sh"]
           }
         }
