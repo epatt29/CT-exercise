@@ -20,5 +20,4 @@ Pretty much 95% of the stuff in this exercise is not original content coming fro
 * List scripts
 * Connect to Azure subscription
 * Provision associated resources
-* Start VM (if needed)
 * Invoke custom script extension to complete a silent install of Apache, MySQL, and PHP, then create basic PHP page.
