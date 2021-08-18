@@ -6,7 +6,7 @@
         "value": "VM01"
       }, 
       "adminPasswordOrKey": {
-        "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBQpv2pQHgamW+tS4aG9WfhmKkiuShE5LlISfcfnh/km5QCZzirtutwWmky0YfFahlqW1Y/1CmeK7UoDf1bnkQZ85Wty00gfrWzgxGdA3JosufNlwz9fPqT0UwS0i/yRk6oab7LjExviiRNSOAPUvdgy6ilhWqwsmOJ/wPmwa30yHkq6KQDVH+0hVtDiix0Chw9F7iGA7y4Hjghygj2ZbnwfJM75AWlOCzehDFM1IiYp6qn/tCq6hENUjUk9yMYluXwyIfGtAduWu8kyzax94TQ0D5EDza0SxzaeQvWHnteJL3kEK+1T4VfijJZR3xLRRYOCbAWp27FWmtg8VpkNTj liz@Lilith"
+        "value": "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAkRPu/HWUs0RcJDTbaoMKzpgam89nq0x0sdX5coIvE08koUyEXRlWbWeS5ADQY7wN8N5hAg20dBcwavFHyXIlzHufA86vvo8kn1IH5dCi4GalSCm+VlvCka/kq2sDh47c0CHBxn4K7UvX9fEwbWreISUspX5iE3xBBy3nSkZSmD7Rp/Be5GRenWl0ry9SoowqYM4ZvV6LmT6DMN/T6QLQohZ6VkFa8VmRR99uJlL6Aa06QDQSXhy/7gK26rI4/7LUtSwq7a8N91XFl76aeEVFms86TDhN+5840HfG2XcrhII7azoVifdOXwtTTm3D5gJupntV3bNXFga8Ovhf8xRAYQ== rsa-key-20210818"
       },
       "vmSize": {
           "value": "Standard_A2v2"
