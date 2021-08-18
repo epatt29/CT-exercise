@@ -2,11 +2,8 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-      "storage": {
-        "value": "[uniqueString(subscription().subscriptionId)]"
-      },
       "vmName": {
-        "value": "[concat('VM-', uniqueString(resourceGroup().id)]"
+        "value": "VM01"
       }, 
       "adminUsername": {
         "value": "[concat('U-', uniqueString(resourceGroup().id)]"
