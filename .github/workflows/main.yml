@@ -2,6 +2,10 @@
 
 name: Deployment and Configuration of Azure VM
 
+Env:
+
+  OUTPUT_PATH: ${{ github.workspace }}
+
 # Workflow Triggers: On push to main branch or manual execution via the Actions tab.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
@@ -21,6 +25,12 @@ jobs:
       - name: Checkout exercise repo
         uses: actions/checkout@v2
         
+      - name: look for ps1 file
+
+        run: |
+
+          ls '${{ env.OUTPUT_PATH }}\IaC\Scripts'
+        
       - name: Authenticate to Azure
         uses: azure/login@v1
         with:
@@ -28,16 +38,6 @@ jobs:
           enable-AzPSSession: true
       
       - name: Deploy virtual machine in Azure
-        uses: azure/powershell@v1
-        with:
-          azPSVersion: '3.1.0'
-          inlineScript: |
-            $templateFile = "Templates\azuredeploy.json"
-            $parameterFile = "azuredeploy.parameters.json"
-            $today=Get-Date -Format "MM-dd-yyyy"
-            $deploymentName="VMDeployment-"+"$today"
-            New-AzResourceGroupDeployment `
-              -ResourceGroupName "VMs_RSG"
-              -Name $deploymentName `
-              -TemplateFile $templateFile `
-              -TemplateParameterFile $parameterFile
+        run: >
+
+          powershell -command "& '${{ env.OUTPUT_PATH }}\IaC\AzCLI\vmcreation.ps1'"
