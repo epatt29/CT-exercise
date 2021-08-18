@@ -9,8 +9,8 @@ Env:
 # Workflow Triggers: On push to main branch or manual execution via the Actions tab.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
+#  push:
+#    branches: [ main ]
 
   workflow_dispatch:
 
@@ -39,7 +39,7 @@ jobs:
           adminuser:
           
         run: >
-          powershell -command "& '${{ env.ScriptsPath }}\vmcreation.ps1'"
+          powershell -command "& '${{ env.ScriptsPath }}\New-LAMPVM.ps1'"
           -servicePrincipal ${{ secrets.SERVICE_PRINCIPAL_APPID }}
           -servicePrincipalSecret ${{ secrets.SERVICE_PRINCIPAL_SECRET }}
           -servicePrincipalTenantId ${{ secrets.SERVICE_PRINCIPAL_TENANTID }}
